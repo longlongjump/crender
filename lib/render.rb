@@ -18,7 +18,7 @@ module ActionController
         controller = options.delete(:controller)
         render_controller(controller, options)
       else
-        render_orig
+        render_orig(*args)
       end
     end
 
