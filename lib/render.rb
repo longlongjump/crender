@@ -3,7 +3,7 @@ module ActionController
 
     alias_method :render_orig, :render
     def render_controller(controller_class, options = {:action => :index})
-      status, headers, resp =  controller_class.action(options[:action]).call(env)
+      status, headers, resp =  controller_class.action(options[:action]).call(request.env)
       render_orig :text => resp.body, :status => status
     end
 
